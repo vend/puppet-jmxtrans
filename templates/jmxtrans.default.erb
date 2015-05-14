@@ -1,7 +1,7 @@
 LOG_DIR="/var/log/jmxtrans"
 SECONDS_BETWEEN_RUNS=<%= @run_interval %>
 JSON_DIR="/etc/jmxtrans"
-HEAP_SIZE=512
+HEAP_SIZE=<%= @heap_size %>
 NEW_SIZE=64
 CPU_CORES=$(cat /proc/cpuinfo | grep processor | wc -l)
 NEW_RATIO=8

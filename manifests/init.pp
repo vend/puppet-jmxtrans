@@ -6,10 +6,12 @@
 # == Parameters
 # $run_interval - seconds between runs of jmx queries.  Default: 15
 # $log_level    - level at which to log jmxtrans messages.  Default: 'info'
+# $heap_size    - number of MB to use as max and starting heap size. Default: 512
 #
 class jmxtrans(
     $run_interval = 15,
     $log_level    = 'info',
+    $heap_size    = 512
 )
 {
     package { 'jmxtrans':

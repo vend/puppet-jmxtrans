@@ -2,9 +2,20 @@
 
 A Puppet module for [jmxtrans](https://github.com/jmxtrans/jmxtrans).
 
+## Installation
+
+Install jmxtrans by declaring the `jmxtrans` class.
+
 This module assumes that a 'jmxtrans' package is available for
 puppet to install.  You can build your own from the jmxtrans repository
 by running ```ant debian```.
+
+### Parameters
+
+* The `run_interval` parameter can be used to control how often jmxtrans will poll in seconds.
+* The `heap_size` parameter, as an integer in MB, to control the JVM heap size used (`-Xmx` and `-Xms` will both be set to this value)
+
+## Configuration
 
 Use the ```jmxtrans::metrics``` define to install
 jmxtrans JSON query config files.  See the [jmxtrans wiki](https://github.com/jmxtrans/jmxtrans/wiki/Queries)
@@ -19,6 +30,8 @@ define for each JVM you would like query.  This will keep JMX queries
 to a single JVM bundled together.  See jmxtrans
 [best practices](https://github.com/jmxtrans/jmxtrans/wiki/BestPractices)
 for more information.
+
+### Parameters
 
 The ```objects``` parameter to jmxtrans::metrics is an array of hashes of the form:
 
